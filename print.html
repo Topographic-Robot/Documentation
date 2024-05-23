@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="mdBook_setup.html"><strong aria-hidden="true">2.1.</strong> Installing mdBook</a></li><li class="chapter-item expanded "><a href="environment_setup.html"><strong aria-hidden="true">2.2.</strong> Environment Setup</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="mdBook_setup.html"><strong aria-hidden="true">2.1.</strong> Installing mdBook</a></li><li class="chapter-item expanded "><a href="environment_setup.html"><strong aria-hidden="true">2.2.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -183,7 +183,7 @@
 <p>We’re building a robot that can travel across all sorts of terrain, from smooth plains to hilly landscapes, while creating detailed 3D maps of the area.
 Our robot isn’t just about mapping the ground—it’s also equipped to measure temperature, humidity, and air quality, giving a full picture of the environment.</p>
 <p>At the heart of our robot is the MSP432 microcontroller, which handles all the data processing and control tasks.
-We’re using SG90 servo motors and 130 DC motors to ensure our robot can move smoothly and adapt to different terrains.
+We’re using SG90 servo motors to ensure our robot can move smoothly and adapt to different terrains.
 With the help of a dual-band WiFi module from Texas Instruments, our robot can communicate its findings in real-time.</p>
 <p>This project is all about combining cool tech and practical applications.
 By the end, we aim to have a robot that’s not only a great mapper but also a valuable tool for anyone interested in environmental monitoring.</p>
@@ -225,17 +225,17 @@ apt-get install gcc
 <p>All of the offical documentation for mdBook can be found on the <a href="https://rust-lang.github.io/mdBook/">official mdBook docs</a>.
 However some good commands are:</p>
 <ul>
-<li>mdbook build — Renders the book.</li>
-<li>mdbook watch — Rebuilds the book any time a source file changes.</li>
-<li>mdbook serve — Runs a web server to view the book, and rebuilds on changes.</li>
-<li>mdbook test — Tests Rust code samples.</li>
-<li>mdbook clean — Deletes the rendered output.</li>
-<li>mdbook completions — Support for shell auto-completion.</li>
+<li><code>mdbook build</code> — Renders the book.</li>
+<li><code>mdbook watch</code> — Rebuilds the book any time a source file changes.</li>
+<li><code>mdbook serve</code> — Runs a web server to view the book, and rebuilds on changes.</li>
+<li><code>mdbook test</code> — Tests Rust code samples.</li>
+<li><code>mdbook clean</code> — Deletes the rendered output.</li>
+<li><code>mdbook completions</code> — Support for shell auto-completion.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="environment-setup"><a class="header" href="#environment-setup">Environment Setup</a></h1>
 <p>The first thing we need to do is setup your environemnt.</p>
 <ol>
-<li>Clone the <a href="https://github.com/Topographic-Robot/SIMPLELINK-MSP432-SDK">SIMPLELINK-MSP432-SDK Repo</a></li>
+<li>Clone the <a href="https://github.com/Topographic-Robot/SIMPLELINK-SDK">SIMPLELINK-SDK Repo</a></li>
 <li>Install the correct instance for your OS</li>
 <li>Link the install path of the files to your system.
 <ol>
@@ -243,9 +243,11 @@ However some good commands are:</p>
 </ol>
 </li>
 </ol>
-<pre><code class="language-sh">export MSP432_HEADERS=/path/to/headers/
+<pre><code class="language-sh">export SIMPLELINK_MSP432P4_SDK=/path/to/headers/
+export SIMPLELINK_CC32XX_SDK=/path/to/headers/
 # for example
-export MSP432_HEADERS=/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/
+export SIMPLELINK_MSP432P4_SDK=/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/
+export SIMPLELINK_CC32XX_SDK=/home/brighton/Documents/SDK/ti/msp432/simplelink_cc32xx_sdk_7_10_00_13/
 </code></pre>
 <ol start="4">
 <li>Source: <code>source ~/.bashrc</code></li>
@@ -276,6 +278,11 @@ export PATH=$PATH:$HOME/go/bin
 # source
 source ~/.bashrc
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
+<ul>
+<li><a href="https://github.com/bsikar">Brighton Sikarskie</a></li>
+<li><a href="https://github.com/Mattinelli">Matthew Manginelli</a></li>
+</ul>
 
                     </main>
 
