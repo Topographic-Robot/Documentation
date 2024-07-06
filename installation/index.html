@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../hardware_design/reasoning_msp432.html"><strong aria-hidden="true">3.1.</strong> Why the MSP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="../installation/index.html" class="active"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../installation/mdBook_setup.html"><strong aria-hidden="true">5.1.</strong> Installing mdBook</a></li><li class="chapter-item expanded "><a href="../installation/environment_setup.html"><strong aria-hidden="true">5.2.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/index.html"><strong aria-hidden="true">6.</strong> Basic Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/movement/makefile.html"><strong aria-hidden="true">6.1.</strong> Movement Makefile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Movement Program</div></li></ol></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/index.html"><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Compiling</div></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/linking_script.html"><strong aria-hidden="true">7.2.</strong> Linking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Flashing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Debugging</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../hardware_design/msp432_vs_esp32.html"><strong aria-hidden="true">3.1.</strong> Why the MSP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="../installation/index.html" class="active"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../installation/environment_setup.html"><strong aria-hidden="true">5.1.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/index.html"><strong aria-hidden="true">6.</strong> Basic Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/movement/makefile.html"><strong aria-hidden="true">6.1.</strong> Movement Makefile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Movement Program</div></li></ol></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/index.html"><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Compiling</div></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/linking_script.html"><strong aria-hidden="true">7.2.</strong> Linking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Flashing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Debugging</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -182,17 +182,82 @@
 <p>There are many things that need to be installed in order to start developing.
 There might be a release on GitHub, but likely not.
 To run this yourself you must go through the install process.</p>
-<p>The first section can most likely be skipped unless you plan on making changes to the documentation.</p>
+<p>The section below can most likely be skipped unless you plan on making changes to the documentation.</p>
+<h2 id="mdbook-setup"><a class="header" href="#mdbook-setup">mdBook setup</a></h2>
+<h3 id="linux"><a class="header" href="#linux">Linux</a></h3>
+<p>If you are going to do development for the documentation of this project, this is for you. Otherwise, continue to the next pages.</p>
+<h4 id="installation-of-rust"><a class="header" href="#installation-of-rust">Installation of Rust</a></h4>
+<p>First Rust needs to be installed on your system:</p>
+<pre><code class="language-sh">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<h4 id="installation-of-gcc"><a class="header" href="#installation-of-gcc">Installation of gcc</a></h4>
+<p>You will need to install gcc for mdBook. The provided command below is for apt systems and will need to be ran with sudo.</p>
+<pre><code class="language-sh">apt-get update
+apt-get install gcc
+</code></pre>
+<h4 id="installation-of-mdbook"><a class="header" href="#installation-of-mdbook">Installation of mdBook</a></h4>
+<p>Once you have installed Rust, the following command can be used to build and install mdBook, this does not need to be ran as root.</p>
+<pre><code class="language-sh">cargo install mdbook
+</code></pre>
+<h4 id="mdbook-documentation"><a class="header" href="#mdbook-documentation">mdBook documentation</a></h4>
+<p>All of the offical documentation for mdBook can be found on the <a href="https://rust-lang.github.io/mdBook/">official mdBook docs</a>.
+However some good commands are:</p>
+<ul>
+<li><code>mdbook build</code> — Renders the book.</li>
+<li><code>mdbook watch</code> — Rebuilds the book any time a source file changes.</li>
+<li><code>mdbook serve</code> — Runs a web server to view the book, and rebuilds on changes.</li>
+<li><code>mdbook test</code> — Tests Rust code samples.</li>
+<li><code>mdbook clean</code> — Deletes the rendered output.</li>
+<li><code>mdbook completions</code> — Support for shell auto-completion.</li>
+</ul>
+<h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
+<h4 id="installation-of-visual-studio"><a class="header" href="#installation-of-visual-studio">Installation of Visual Studio</a></h4>
+<h4 id="installation-of-rust-1"><a class="header" href="#installation-of-rust-1">Installation of Rust</a></h4>
+<h4 id="installation-of-mdbook-1"><a class="header" href="#installation-of-mdbook-1">Installation of mdBook</a></h4>
+<h4 id="mdbook-documentation-1"><a class="header" href="#mdbook-documentation-1">mdBook documentation</a></h4>
+<p>To install RUST for windows follow the following link provided
+<a href="https://www.rust-lang.org/tools/install">https://www.rust-lang.org/tools/install</a>
+Download the 64 bit .exe and run the file.
+Your command prompt should open once the file is ran.</p>
+<ol>
+<li>
+<p>“Rust requires a linker and Windows API libraries but they don’t seem to be available.”  The following prompt should appear; select the 1st option by typing the number 1. This should be the free version. Selecting this will prompt Windows to install Visual Studio.</p>
+</li>
+<li>
+<p>When prompted, click continue and install both packages displayed.</p>
+</li>
+<li>
+<p>Once completed, the command prompt should update. Reboot your computer to continue.</p>
+</li>
+<li>
+<p>Once your computer has rebooted, reopen your command prompt by reopening the rustup-init file previously downloaded. Three options should appear:</p>
+<ul>
+<li>Proceed with standard installation (default - just press enter)</li>
+<li>Customize installation</li>
+<li>Cancel installation</li>
+</ul>
+</li>
+</ol>
+<p>Select the 1st option.</p>
+<ol start="5">
+<li>
+<p>Once install close the command prompt and reopen.This would reload its PATH environment variable to include Cargo’s bin directory
+(<code>%USERPROFILE%\.cargo\bin</code>).</p>
+</li>
+<li>
+<p>Next reopen the command prompt and rust should be properly installed.</p>
+</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../hardware_design/reasoning_msp432.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../hardware_design/msp432_vs_esp32.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../installation/mdBook_setup.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../installation/environment_setup.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -202,11 +267,11 @@ To run this yourself you must go through the install process.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../hardware_design/reasoning_msp432.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../hardware_design/msp432_vs_esp32.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../installation/mdBook_setup.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../installation/environment_setup.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

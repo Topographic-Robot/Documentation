@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../hardware_design/reasoning_msp432.html"><strong aria-hidden="true">3.1.</strong> Why the MSP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="../installation/index.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../installation/mdBook_setup.html"><strong aria-hidden="true">5.1.</strong> Installing mdBook</a></li><li class="chapter-item expanded "><a href="../installation/environment_setup.html" class="active"><strong aria-hidden="true">5.2.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/index.html"><strong aria-hidden="true">6.</strong> Basic Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/movement/makefile.html"><strong aria-hidden="true">6.1.</strong> Movement Makefile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Movement Program</div></li></ol></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/index.html"><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Compiling</div></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/linking_script.html"><strong aria-hidden="true">7.2.</strong> Linking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Flashing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Debugging</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../hardware_design/msp432_vs_esp32.html"><strong aria-hidden="true">3.1.</strong> Why the MSP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="../installation/index.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../installation/environment_setup.html" class="active"><strong aria-hidden="true">5.1.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/index.html"><strong aria-hidden="true">6.</strong> Basic Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/movement/makefile.html"><strong aria-hidden="true">6.1.</strong> Movement Makefile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Movement Program</div></li></ol></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/index.html"><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Compiling</div></li><li class="chapter-item expanded "><a href="../compiling_linking_flashing_more/linking_script.html"><strong aria-hidden="true">7.2.</strong> Linking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Flashing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Debugging</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -179,19 +179,20 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="environment-setup"><a class="header" href="#environment-setup">Environment Setup</a></h1>
+<h2 id="linux-environment-tested-on-debian-1260"><a class="header" href="#linux-environment-tested-on-debian-1260">Linux Environment (tested on debian-12.6.0)</a></h2>
 <p>The first thing we need to do is setup your environemnt.</p>
 <ol>
 <li>Clone the <a href="https://github.com/Topographic-Robot/SIMPLELINK-SDK">SIMPLELINK-SDK Repo</a></li>
-<li>Install the correct instance for your OS</li>
+<li>Install the correct instance for your OS (<code>.run</code>)</li>
 <li>Link the install path of the files to your system.
 <ol>
 <li>In your <code>~/.bashrc</code> add the following:</li>
 </ol>
 </li>
 </ol>
-<pre><code class="language-sh">export SIMPLELINK_MSP432P4_SDK=/path/to/headers/
+<pre><code class="language-sh">export SIMPLELINK_MSP432P4_SDK="/path/to/headers/"
 # for example
-export SIMPLELINK_MSP432P4_SDK=/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/
+export SIMPLELINK_MSP432P4_SDK="/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/"
 </code></pre>
 <ol start="4">
 <li>Source: <code>source ~/.bashrc</code></li>
@@ -217,17 +218,104 @@ sudo apt install golang
 go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
 
 # in ~/.bashrc add:
-export PATH=$PATH:$HOME/go/bin
+export PATH="$PATH:$HOME/go/bin"
 
 # source
 source ~/.bashrc
 </code></pre>
+<h2 id="macos-environment-tested-on-macbook-air-m1-2020-with-sonoma-v145"><a class="header" href="#macos-environment-tested-on-macbook-air-m1-2020-with-sonoma-v145">MacOS Environment (tested on MacBook Air M1 2020 with Sonoma v14.5)</a></h2>
+<p>The first thing we need to do is setup your environemnt.</p>
+<ol>
+<li>Clone the <a href="https://github.com/Topographic-Robot/SIMPLELINK-SDK">SIMPLELINK-SDK Repo</a></li>
+<li>Install the correct instance for your OS (<code>.zip</code>)
+<ol>
+<li>You will need to extract the .zip, do this in finder or the terminal with <code>unzip</code></li>
+<li>You will then see a <code>.app</code>, run these 2 files.</li>
+<li>Check below for common issues if they occur</li>
+</ol>
+</li>
+<li>Link the install path of the files to your system.
+<ol>
+<li>In your <code>~/.zshrc</code> add the following:</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-sh">export SIMPLELINK_MSP432P4_SDK="/path/to/headers/"
+# for example
+export SIMPLELINK_MSP432P4_SDK="/Applications/ti/simplelink_msp432p4_sdk_3_40_01_02"
+</code></pre>
+<ol start="4">
+<li>Source: <code>source ~/.zshrc</code></li>
+<li>Install more packages
+<ul>
+<li>NOTE: <code>gdb</code> cant be installed so <code>lldb</code> must be used instead</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-sh">brew install gcc make pkg-config arm-none-eabi-gcc openocd bear screen qemu
+</code></pre>
+<p>Keep in mind</p>
+<blockquote>
+<p>GNU “make” has been installed as “gmake”.
+If you need to use it as “make”, you can add a “gnubin” directory
+to your PATH from your zshrc like:</p>
+<p><code>export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"</code></p>
+</blockquote>
+<ol start="6">
+<li>Install clang-format v17+</li>
+</ol>
+<pre><code class="language-sh">brew update
+brew install llvm
+</code></pre>
+<blockquote>
+<p>If you need to have llvm first in your PATH, run:
+<code>export PATH="/opt/homebrew/opt/llvm/bin:$PATH"</code></p>
+<p>For compilers to find llvm you may need to set:
+<code>export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"</code>
+<code>export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"</code></p>
+<p>To avoide clobbering:
+<code>export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/llvm/lib"</code>
+<code>export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/llvm/include"</code></p>
+</blockquote>
+<p>When I did this, I got</p>
+<pre><code class="language-sh">source ~/.zshrc 
+clang-format --version
+
+Homebrew clang-format version 18.1.8
+</code></pre>
+<ol start="7">
+<li>Install asmfmt</li>
+</ol>
+<pre><code class="language-sh">brew update
+brew install go
+go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
+echo 'export PATH="$PATH:$HOME/go/bin"' &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre>
+<h2 id="common-issues"><a class="header" href="#common-issues">Common Issues</a></h2>
+<ol>
+<li>MacOS: ““simplelink_sdk_wifi_plugin_4_20_00_10” can’t be opened because Apple cannot check it for malicious software.”
+<ol>
+<li>Open System Settings</li>
+<li>Go to Privacy &amp; Security</li>
+<li>Allow the App
+<ol>
+<li>In the “Security &amp; Privacy” window</li>
+<li>You should see a message near the bottom saying that the app was blocked because it is not from an identified developer</li>
+<li>Click the “Open Anyway” button next to this message</li>
+<li>Open the App</li>
+<li>A new dialog box will appear asking if you are sure you want to open the app. Confirm by clicking “Open”</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../installation/mdBook_setup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../installation/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -241,7 +329,7 @@ source ~/.bashrc
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../installation/mdBook_setup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../installation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
