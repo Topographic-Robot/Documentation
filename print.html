@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="hardware_design/msp432_vs_esp32.html"><strong aria-hidden="true">3.1.</strong> Why the MSP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="installation/index.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/environment_setup.html"><strong aria-hidden="true">5.1.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><a href="basics/index.html"><strong aria-hidden="true">6.</strong> Basic Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="basics/movement/makefile.html"><strong aria-hidden="true">6.1.</strong> Movement Makefile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Movement Program</div></li></ol></li><li class="chapter-item expanded "><a href="compiling_linking_flashing_more/index.html"><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Compiling</div></li><li class="chapter-item expanded "><a href="compiling_linking_flashing_more/linking_script.html"><strong aria-hidden="true">7.2.</strong> Linking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Flashing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Debugging</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="hardware_design/msp432_vs_esp32.html"><strong aria-hidden="true">3.1.</strong> Why the ESP32</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="installation/index.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/environment_setup.html"><strong aria-hidden="true">5.1.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Basic Examples</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -182,9 +182,8 @@
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>We’re building a robot that can travel across all sorts of terrain, from smooth plains to hilly landscapes, while creating detailed 3D maps of the area.
 Our robot isn’t just about mapping the ground—it’s also equipped to measure temperature, humidity, and air quality, giving a full picture of the environment.</p>
-<p>At the heart of our robot is the MSP432 microcontroller, which handles all the data processing and control tasks.
-We’re using SG90 servo motors to ensure our robot can move smoothly and adapt to different terrains.
-With the help of a dual-band WiFi module from Texas Instruments, our robot can communicate its findings in real-time.</p>
+<p>At the heart of our robot is the ESP32 microcontroller, which handles all the data processing and control tasks.
+We’re using MG946R servo motors to ensure our robot can move smoothly and adapt to different terrains.</p>
 <p>This project is all about combining cool tech and practical applications.
 By the end, we aim to have a robot that’s not only a great mapper but also a valuable tool for anyone interested in environmental monitoring.</p>
 <h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
@@ -194,13 +193,13 @@ By the end, we aim to have a robot that’s not only a great mapper but also a v
 <h2 id="contributing"><a class="header" href="#contributing">Contributing</a></h2>
 <p>Anything inside of the Topographic-Robot is free and open source.
 You can find the source code in various repos on the <a href="https://github.com/orgs/Topographic-Robot/repositories">organization</a>.
-Any issue or feature request can be posted on the GitHub issue tracker for their coresponding repository. Internally Jira
+Any issue or feature request can be posted on the GitHub issue tracker for their corresponding repository. Internally Jira
 is used to manage features, issues, sprints, the backlog and many other things. This means not everything on Jira will be
 attached to GitHub. However, all of the code documentation, and the progression of development will be shown.</p>
 <h2 id="license"><a class="header" href="#license">License</a></h2>
 <p>Everything within the organization is released under the <a href="https://github.com/Topographic-Robot/Documentation/blob/main/LICENSE">MIT License</a>.
-If there is a repository that includes a different license such as a library thats not internaly made by us then that license takes precedence.
-If there is ever a repository that is made by us and doesn’t explicitly include a licenese then know it is still released under the MIT License.</p>
+If there is a repository that includes a different license such as a library thats not internally made by us then that license takes precedence.
+If there is ever a repository that is made by us and doesn’t explicitly include a license then know it is still released under the MIT License.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="microcontroller-decision-for-topographical-mapping-robot"><a class="header" href="#microcontroller-decision-for-topographical-mapping-robot">Microcontroller Decision for Topographical Mapping Robot</a></h1>
 <h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
 <p>When designing a robot for topographical mapping, selecting the appropriate microcontroller is crucial. This document outlines the decision-making process for choosing between the MSP432 and the ESP32, detailing the benefits and drawbacks of each, and explaining the final choice to use the ESP32.</p>
@@ -267,7 +266,7 @@ apt-get install gcc
 <pre><code class="language-sh">cargo install mdbook
 </code></pre>
 <h4 id="mdbook-documentation"><a class="header" href="#mdbook-documentation">mdBook documentation</a></h4>
-<p>All of the offical documentation for mdBook can be found on the <a href="https://rust-lang.github.io/mdBook/">official mdBook docs</a>.
+<p>All of the official documentation for mdBook can be found on the <a href="https://rust-lang.github.io/mdBook/">official mdBook docs</a>.
 However some good commands are:</p>
 <ul>
 <li><code>mdbook build</code> — Renders the book.</li>
@@ -278,11 +277,7 @@ However some good commands are:</p>
 <li><code>mdbook completions</code> — Support for shell auto-completion.</li>
 </ul>
 <h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
-<h4 id="installation-of-visual-studio"><a class="header" href="#installation-of-visual-studio">Installation of Visual Studio</a></h4>
-<h4 id="installation-of-rust-1"><a class="header" href="#installation-of-rust-1">Installation of Rust</a></h4>
-<h4 id="installation-of-mdbook-1"><a class="header" href="#installation-of-mdbook-1">Installation of mdBook</a></h4>
-<h4 id="mdbook-documentation-1"><a class="header" href="#mdbook-documentation-1">mdBook documentation</a></h4>
-<p>To install RUST for windows follow the following link provided
+<p>To install Rust for windows follow the following link provided
 <a href="https://www.rust-lang.org/tools/install">https://www.rust-lang.org/tools/install</a>
 Download the 64 bit .exe and run the file.
 Your command prompt should open once the file is ran.</p>
@@ -317,80 +312,29 @@ Your command prompt should open once the file is ran.</p>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="environment-setup"><a class="header" href="#environment-setup">Environment Setup</a></h1>
 <h2 id="linux-environment-tested-on-debian-1260"><a class="header" href="#linux-environment-tested-on-debian-1260">Linux Environment (tested on debian-12.6.0)</a></h2>
-<p>The first thing we need to do is setup your environemnt.</p>
-<ol>
-<li>Clone the <a href="https://github.com/Topographic-Robot/SIMPLELINK-SDK">SIMPLELINK-SDK Repo</a></li>
-<li>Install the correct instance for your OS (<code>.run</code>)</li>
-<li>Link the install path of the files to your system.
-<ol>
-<li>In your <code>~/.bashrc</code> add the following:</li>
-</ol>
-</li>
-</ol>
-<pre><code class="language-sh">export SIMPLELINK_MSP432P4_SDK="/path/to/headers/"
-# for example
-export SIMPLELINK_MSP432P4_SDK="/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/"
-</code></pre>
-<ol start="4">
-<li>Source: <code>source ~/.bashrc</code></li>
-<li>Install more packages with sudo</li>
-</ol>
-<pre><code class="language-sh">apt-get install build-essential gcc make gcc-arm-none-eabi openocd gconf2 bear screen qemu-system-arm gdb-multiarch
-</code></pre>
-<ol start="6">
-<li>Install clang-format</li>
-</ol>
-<pre><code class="language-sh">sudo apt-get install wget lsb-release software-properties-common
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-sudo bash ./llvm.sh 17
-sudo apt-get update
-sudo apt-get install clang-format-17
-</code></pre>
-<ol start="7">
-<li>Install asmfmt</li>
-</ol>
-<pre><code class="language-sh">sudo apt update
-sudo apt install golang
-go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
-
-# in ~/.bashrc add:
-export PATH="$PATH:$HOME/go/bin"
-
-# source
-source ~/.bashrc
-</code></pre>
 <h2 id="macos-environment-tested-on-macbook-air-m1-2020-with-sonoma-v145"><a class="header" href="#macos-environment-tested-on-macbook-air-m1-2020-with-sonoma-v145">MacOS Environment (tested on MacBook Air M1 2020 with Sonoma v14.5)</a></h2>
-<p>The first thing we need to do is setup your environemnt.</p>
 <ol>
-<li>Clone the <a href="https://github.com/Topographic-Robot/SIMPLELINK-SDK">SIMPLELINK-SDK Repo</a></li>
-<li>Install the correct instance for your OS (<code>.zip</code>)
+<li>Install esp-idf, follow and run: <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html">esp-idf MacOS setup</a>
 <ol>
-<li>You will need to extract the .zip, do this in finder or the terminal with <code>unzip</code></li>
-<li>You will then see a <code>.app</code>, run these 2 files.</li>
-<li>Check below for common issues if they occur</li>
+<li><code>brew install cmake ninja dfu-util</code></li>
+<li><code>git clone --recursive https://github.com/espressif/esp-idf.git</code></li>
+<li><code>cd esp-idf</code></li>
+<li><code>./install.sh esp32</code></li>
+<li><code>echo "alias get_idf=\". $(pwd)/export.sh\"" &gt;&gt; ~/.zshrc</code></li>
+<li><code>source ~/.zshrc</code></li>
+<li>Run this every time in a project to get <code>idf.py</code>: <code>get_idf</code></li>
 </ol>
 </li>
-<li>Link the install path of the files to your system.
-<ol>
-<li>In your <code>~/.zshrc</code> add the following:</li>
-</ol>
-</li>
-</ol>
-<pre><code class="language-sh">export SIMPLELINK_MSP432P4_SDK="/path/to/headers/"
-# for example
-export SIMPLELINK_MSP432P4_SDK="/Applications/ti/simplelink_msp432p4_sdk_3_40_01_02"
-</code></pre>
-<ol start="4">
-<li>Source: <code>source ~/.zshrc</code></li>
 <li>Install more packages
+<ol>
+<li><code>brew install gcc make pkg-config arm-none-eabi-gcc openocd bear screen qemu</code>
 <ul>
 <li>NOTE: <code>gdb</code> cant be installed so <code>lldb</code> must be used instead</li>
 </ul>
 </li>
 </ol>
-<pre><code class="language-sh">brew install gcc make pkg-config arm-none-eabi-gcc openocd bear screen qemu
-</code></pre>
+</li>
+</ol>
 <p>Keep in mind</p>
 <blockquote>
 <p>GNU “make” has been installed as “gmake”.
@@ -398,610 +342,83 @@ If you need to use it as “make”, you can add a “gnubin” directory
 to your PATH from your zshrc like:</p>
 <p><code>export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"</code></p>
 </blockquote>
-<ol start="6">
-<li>Install clang-format v17+</li>
+<ol start="3">
+<li>Install clang-format v17+
+<ol>
+<li><code>brew update</code></li>
+<li><code>brew install llvm</code></li>
 </ol>
-<pre><code class="language-sh">brew update
-brew install llvm
-</code></pre>
+</li>
+</ol>
 <blockquote>
 <p>If you need to have llvm first in your PATH, run:
 <code>export PATH="/opt/homebrew/opt/llvm/bin:$PATH"</code></p>
 <p>For compilers to find llvm you may need to set:
-<code>export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"</code>
-<code>export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"</code></p>
-<p>To avoide clobbering:
-<code>export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/llvm/lib"</code>
-<code>export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/llvm/include"</code></p>
+<code>export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"</code> &gt; <code>export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"</code></p>
+<p>To avoid clobbering:
+<code>export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/llvm/lib"</code> &gt; <code>export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/llvm/include"</code></p>
 </blockquote>
 <p>When I did this, I got</p>
-<pre><code class="language-sh">source ~/.zshrc 
+<pre><code class="language-sh">source ~/.zshrc
 clang-format --version
 
 Homebrew clang-format version 18.1.8
 </code></pre>
-<ol start="7">
-<li>Install asmfmt</li>
-</ol>
-<pre><code class="language-sh">brew update
-brew install go
-go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
-echo 'export PATH="$PATH:$HOME/go/bin"' &gt;&gt; ~/.zshrc
-source ~/.zshrc
-</code></pre>
-<h2 id="common-issues"><a class="header" href="#common-issues">Common Issues</a></h2>
+<ol start="4">
+<li>
+<p>Install asmfmt</p>
 <ol>
-<li>MacOS: ““simplelink_sdk_wifi_plugin_4_20_00_10” can’t be opened because Apple cannot check it for malicious software.”
+<li><code>brew update</code></li>
+<li><code>brew install go</code></li>
+<li><code>go install github.com/klauspost/asmfmt/cmd/asmfmt@latest</code></li>
+<li><code>echo 'export PATH="$PATH:$HOME/go/bin"' &gt;&gt; ~/.zshrc</code></li>
+<li><code>source ~/.zshrc</code></li>
+</ol>
+</li>
+<li>
+<p>(Optional) Install VS Code Plugin</p>
 <ol>
-<li>Open System Settings</li>
-<li>Go to Privacy &amp; Security</li>
-<li>Allow the App
+<li><a href="https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md">VS Code Plugin</a></li>
+<li><img src="installation/vscode-esp-idf-extension-macos.png" alt="vscode-esp-idf-extension" /></li>
+</ol>
+</li>
+</ol>
+<h2 id="windows-environment-tested-on-windows-11-23h2"><a class="header" href="#windows-environment-tested-on-windows-11-23h2">Windows Environment (tested on Windows 11 23H2)</a></h2>
+<p>The first thing we need to do is setup your environment.</p>
 <ol>
-<li>In the “Security &amp; Privacy” window</li>
-<li>You should see a message near the bottom saying that the app was blocked because it is not from an identified developer</li>
-<li>Click the “Open Anyway” button next to this message</li>
-<li>Open the App</li>
-<li>A new dialog box will appear asking if you are sure you want to open the app. Confirm by clicking “Open”</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="basic-examples"><a class="header" href="#basic-examples">Basic Examples</a></h1>
-<p>There are many basic programs that we made while learning and developing the real project</p>
-<ul>
-<li><a href="basics/./movement/program.html">movement</a></li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="movement-makefile"><a class="header" href="#movement-makefile">Movement Makefile</a></h1>
-<p>This Makefile is used to build and upload firmware for the MSP432P401R microcontroller. Below is an explanation of each part, including every flag and its purpose.</p>
-<h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
-<pre><code class="language-makefile">SIMPLELINK_MSP432P4_SDK := $(SIMPLELINK_MSP432P4_SDK)
-</code></pre>
-<ul>
-<li><strong>SIMPLELINK_MSP432P4_SDK</strong>: Path to the SimpleLink MSP432P4 SDK. It allows the inclusion of SDK source files and headers, which are necessary for using the libraries and functions provided by TI for the MSP432P401R microcontroller.</li>
-</ul>
-<h3 id="toolchain"><a class="header" href="#toolchain">Toolchain</a></h3>
-<pre><code class="language-makefile">CC  = arm-none-eabi-gcc # compiler
-AS  = arm-none-eabi-gcc # assembler
-LNK = arm-none-eabi-gcc # linker
-
-OBJCOPY = arm-none-eabi-objcopy # copy and translate object files into machine-readable opcodes
-</code></pre>
-<ul>
-<li><strong>CC</strong>: The C compiler. <code>arm-none-eabi-gcc</code> is a cross-compiler for ARM Cortex microcontrollers. We use this to compile C source code into object files for embedded systems.</li>
-<li><strong>AS</strong>: The assembler, also using <code>arm-none-eabi-gcc</code> for consistency, to convert assembly language source code into object files.</li>
-<li><strong>LNK</strong>: The linker, which combines object files into a single executable. This is crucial for creating a final firmware image.</li>
-<li><strong>OBJCOPY</strong>: A utility to copy and translate object files into different formats, such as converting ELF (Executable and Linkable Format) to binary. This is used for creating the final binary file that will be uploaded to the microcontroller.</li>
-</ul>
-<h3 id="project-information"><a class="header" href="#project-information">Project Information</a></h3>
-<pre><code class="language-makefile">NAME        = topographic-robot
-SRC_DIR     = src
-LIB_DIR     = ../../lib
-LNK_DIR     = ../../lnk
-BUILD_DIR   = build
-DEBUG_DIR   = $(BUILD_DIR)/debug
-RELEASE_DIR = $(BUILD_DIR)/release
-</code></pre>
-<ul>
-<li><strong>NAME</strong>: The name of the project, which will be used for naming the final output files.</li>
-<li><strong>SRC_DIR</strong>: Directory containing source files. This keeps the source code organized.</li>
-<li><strong>LIB_DIR</strong>: Directory containing library files. This allows for modular development by reusing libraries.</li>
-<li><strong>LNK_DIR</strong>: Directory containing linker scripts. Linker scripts are used to control the memory layout of the output file.</li>
-<li><strong>BUILD_DIR</strong>: Directory for build output. This keeps the build artifacts separate from the source code.</li>
-<li><strong>DEBUG_DIR</strong>: Directory for debug build output. This helps in organizing the output files for different build configurations.</li>
-<li><strong>RELEASE_DIR</strong>: Directory for release build output. This helps in organizing the output files for different build configurations.</li>
-</ul>
-<h3 id="debugging-and-simulation-tools"><a class="header" href="#debugging-and-simulation-tools">Debugging and Simulation Tools</a></h3>
-<pre><code class="language-makefile">OPENOCD     = openocd # open on-chip debugger (debugging)
-OPENOCD_DIR = /usr/share/openocd/scripts/board
-OPENOCD_CFG = "$(OPENOCD_DIR)/ti_msp432_launchpad.cfg"
-QEMU        = qemu-system-arm
-</code></pre>
-<ul>
-<li><strong>OPENOCD</strong>: Open On-Chip Debugger used for programming and debugging embedded targets. It communicates with the microcontroller and allows us to flash firmware and perform debugging.</li>
-<li><strong>OPENOCD_DIR</strong>: Directory containing OpenOCD scripts, which are necessary for specifying the target board and its configuration.</li>
-<li><strong>OPENOCD_CFG</strong>: Configuration file for OpenOCD to specify the target board (MSP432 Launchpad in this case).</li>
-<li><strong>QEMU</strong>: QEMU emulator for simulating ARM systems. This is used for running the firmware in a simulated environment, which is useful for testing without needing the actual hardware.</li>
-</ul>
-<h3 id="gdb-configuration"><a class="header" href="#gdb-configuration">GDB Configuration</a></h3>
-<pre><code class="language-makefile">ifeq (, $(shell which arm-none-eabi-gdb))
-  GDB = gdb-multiarch
-else
-  GDB = arm-none-eabi-gdb
-endif
-</code></pre>
-<ul>
-<li><strong>GDB</strong>: GNU Debugger for ARM, used for debugging applications. If <code>arm-none-eabi-gdb</code> is not found, it falls back to <code>gdb-multiarch</code>. This ensures that we have a debugger available regardless of the specific toolchain installation.</li>
-</ul>
-<h2 id="compiler-and-linker-flags"><a class="header" href="#compiler-and-linker-flags">Compiler and Linker Flags</a></h2>
-<h3 id="common-flags"><a class="header" href="#common-flags">Common Flags</a></h3>
-<pre><code class="language-makefile">CFLAGS_COMMON = -I"$(SIMPLELINK_MSP432P4_SDK)/source" \
-                -I"$(SIMPLELINK_MSP432P4_SDK)/source/third_party/CMSIS/Include" \
-                -D__MSP432P401R__ \
-                -DDeviceFamily_MSP432P401x \
-                -mcpu=cortex-m4 \
-                -mthumb \
-                -mfloat-abi=hard \
-                -mfpu=fpv4-sp-d16
-</code></pre>
-<ul>
-<li><strong>CFLAGS_COMMON</strong>: Common compiler flags for both debug and release builds.
-<ul>
-<li><code>-I"$(SIMPLELINK_MSP432P4_SDK)/source"</code>: Adds the SDK source directory to the compiler’s include path, allowing the compiler to find header files.</li>
-<li><code>-I"$(SIMPLELINK_MSP432P4_SDK)/source/third_party/CMSIS/Include"</code>: Adds the CMSIS include directory to the compiler’s include path. CMSIS (Cortex Microcontroller Software Interface Standard) provides a standardized interface to the processor and peripherals.</li>
-<li><code>-D__MSP432P401R__</code>: Defines a preprocessor macro for the MSP432P401R device, enabling device-specific code.</li>
-<li><code>-DDeviceFamily_MSP432P401x</code>: Defines a preprocessor macro for the MSP432P401x device family, enabling family-specific code.</li>
-<li><code>-mcpu=cortex-m4</code>: Specifies the target CPU architecture as Cortex-M4, optimizing the code for this specific processor.</li>
-<li><code>-mthumb</code>: Generates code for the Thumb instruction set, which is a compact, efficient instruction set for ARM processors.</li>
-<li><code>-mfloat-abi=hard</code>: Uses hardware floating-point instructions, which are faster than software emulation.</li>
-<li><code>-mfpu=fpv4-sp-d16</code>: Specifies the floating-point unit as single-precision, with 16 registers, enhancing floating-point operations’ performance.</li>
-</ul>
-</li>
-</ul>
-<h3 id="debug-flags"><a class="header" href="#debug-flags">Debug Flags</a></h3>
-<pre><code class="language-makefile">CFLAGS_DEBUG = -g -O0 -DDEBUG $(CFLAGS_COMMON)
-ASFLAGS_DEBUG = $(CFLAGS_COMMON)
-</code></pre>
-<ul>
-<li><strong>CFLAGS_DEBUG</strong>: Compiler flags for debug builds.
-<ul>
-<li><code>-g</code>: Generates debug information, which is essential for source-level debugging.</li>
-<li><code>-O0</code>: Disables optimizations to make debugging easier and more predictable, as optimized code can be difficult to debug.</li>
-<li><code>-DDEBUG</code>: Defines a preprocessor macro for debugging, enabling debug-specific code.</li>
-</ul>
-</li>
-<li><strong>ASFLAGS_DEBUG</strong>: Assembler flags for debug builds, same as the common flags to ensure consistency.</li>
-</ul>
-<h3 id="release-flags"><a class="header" href="#release-flags">Release Flags</a></h3>
-<pre><code class="language-makefile">CFLAGS_RELEASE = -s -O3 -DNDEBUG $(CFLAGS_COMMON)
-ASFLAGS_RELEASE = $(CFLAGS_COMMON)
-</code></pre>
-<ul>
-<li><strong>CFLAGS_RELEASE</strong>: Compiler flags for release builds.
-<ul>
-<li><code>-s</code>: Strips symbols from the output, reducing the final binary size.</li>
-<li><code>-O3</code>: Optimizes for speed, generating the fastest possible code.</li>
-<li><code>-DNDEBUG</code>: Defines a preprocessor macro to disable debugging code, ensuring that no debug-related code is included in the release build.</li>
-</ul>
-</li>
-<li><strong>ASFLAGS_RELEASE</strong>: Assembler flags for release builds, same as the common flags to ensure consistency.</li>
-</ul>
-<h3 id="linker-flags"><a class="header" href="#linker-flags">Linker Flags</a></h3>
-<pre><code class="language-makefile">LFLAGS = -T "$(LNK_DIR)/msp432p401r.lds" --specs=nosys.specs \
-         -L"$(SIMPLELINK_MSP432P4_SDK)/source" \
-         -l:ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a \
-         -static \
-         -Wl,--gc-sections \
-         -lgcc \
-         -lc \
-         -lm \
-         -lnosys \
-         --specs=nano.specs \
-         -mcpu=cortex-m4 \
-         -mthumb \
-         -mfloat-abi=hard \
-         -mfpu=fpv4-sp-d16
-</code></pre>
-<ul>
-<li><strong>LFLAGS</strong>: Linker flags.
-<ul>
-<li><code>-T "$(LNK_DIR)/msp432p401r.lds"</code>: Specifies the linker script, which defines the memory layout of the output file.</li>
-<li><code>--specs=nosys.specs</code>: Links with a minimal C library suitable for embedded systems.</li>
-<li><code>-L"$(SIMPLELINK_MSP432P4_SDK)/source"</code>: Adds the SDK source directory to the linker search path.</li>
-<li><code>-l:ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a</code>: Links with the MSP432 driver library, providing peripheral driver support.</li>
-<li><code>-static</code>: Produces a statically linked executable, which includes all necessary libraries, making the executable self-contained.</li>
-<li><code>-Wl,--gc-sections</code>: Removes unused sections, reducing the final binary size.</li>
-<li><code>-lgcc</code>: Links with the GCC runtime library, providing necessary runtime support.</li>
-<li><code>-lc</code>: Links with the standard C library.</li>
-<li><code>-lm</code>: Links with the math library.</li>
-<li><code>-lnosys</code>: Links with the minimal system library, suitable for bare-metal applications.</li>
-<li><code>--specs=nano.specs</code>: Uses the newlib-nano C library, which is a smaller, more efficient version of the standard C library.</li>
-<li></li>
-</ul>
-</li>
-</ul>
-<p><code>-mcpu=cortex-m4</code>: Specifies the target CPU architecture.</p>
-<ul>
-<li><code>-mthumb</code>: Generates code for the Thumb instruction set.</li>
-<li><code>-mfloat-abi=hard</code>: Uses hardware floating-point instructions.</li>
-<li><code>-mfpu=fpv4-sp-d16</code>: Specifies the floating-point unit.</li>
-</ul>
-<h2 id="source-files-and-objects"><a class="header" href="#source-files-and-objects">Source Files and Objects</a></h2>
-<pre><code class="language-makefile">C_SOURCES           = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(LIB_DIR)/*.c)
-ASM_SOURCES         = $(wildcard $(SRC_DIR)/*.s)
-C_OBJECTS_DEBUG     = $(patsubst $(SRC_DIR)/%.c,$(DEBUG_DIR)/%.o,$(wildcard $(SRC_DIR)/*.c)) \
-                      $(patsubst $(LIB_DIR)/%.c,$(DEBUG_DIR)/%.o,$(wildcard $(LIB_DIR)/*.c))
-C_OBJECTS_RELEASE   = $(patsubst $(SRC_DIR)/%.c,$(RELEASE_DIR)/%.o,$(wildcard $(SRC_DIR)/*.c)) \
-                      $(patsubst $(LIB_DIR)/%.c,$(RELEASE_DIR)/%.o,$(wildcard $(LIB_DIR)/*.c))
-ASM_OBJECTS_DEBUG   = $(patsubst $(SRC_DIR)/%.s,$(DEBUG_DIR)/%.o,$(wildcard $(SRC_DIR)/*.s))
-ASM_OBJECTS_RELEASE = $(patsubst $(SRC_DIR)/%.s,$(RELEASE_DIR)/%.o,$(wildcard $(SRC_DIR)/*.s))
-OBJECTS_DEBUG       = $(C_OBJECTS_DEBUG) $(ASM_OBJECTS_DEBUG)
-OBJECTS_RELEASE     = $(C_OBJECTS_RELEASE) $(ASM_OBJECTS_RELEASE)
-</code></pre>
-<ul>
-<li><strong>C_SOURCES</strong>: C source files in <code>src</code> and <code>lib</code> directories.</li>
-<li><strong>ASM_SOURCES</strong>: Assembly source files in <code>src</code> directory.</li>
-<li><strong>C_OBJECTS_DEBUG</strong>: Debug build object files from C sources, using pattern substitution to map source files to object files.</li>
-<li><strong>C_OBJECTS_RELEASE</strong>: Release build object files from C sources, using pattern substitution to map source files to object files.</li>
-<li><strong>ASM_OBJECTS_DEBUG</strong>: Debug build object files from assembly sources, using pattern substitution to map source files to object files.</li>
-<li><strong>ASM_OBJECTS_RELEASE</strong>: Release build object files from assembly sources, using pattern substitution to map source files to object files.</li>
-<li><strong>OBJECTS_DEBUG</strong>: All debug build object files, both C and assembly.</li>
-<li><strong>OBJECTS_RELEASE</strong>: All release build object files, both C and assembly.</li>
-</ul>
-<h2 id="build-targets"><a class="header" href="#build-targets">Build Targets</a></h2>
-<h3 id="all"><a class="header" href="#all">All</a></h3>
-<pre><code class="language-makefile">all: release
-</code></pre>
-<ul>
-<li><strong>all</strong>: Default target that builds the release version.</li>
-</ul>
-<h3 id="debug-and-release"><a class="header" href="#debug-and-release">Debug and Release</a></h3>
-<pre><code class="language-makefile">debug: CFLAGS = $(CFLAGS_DEBUG)
-debug: $(DEBUG_DIR)/$(NAME).elf
-
-release: CFLAGS = $(CFLAGS_RELEASE)
-release: $(RELEASE_DIR)/$(NAME).elf
-</code></pre>
-<ul>
-<li><strong>debug</strong>: Builds the project with debug flags.</li>
-<li><strong>release</strong>: Builds the project with release flags.</li>
-</ul>
-<h3 id="linking"><a class="header" href="#linking">Linking</a></h3>
-<pre><code class="language-makefile">$(DEBUG_DIR)/$(NAME).elf: $(OBJECTS_DEBUG)
-    @mkdir -p $(DEBUG_DIR)
-    @echo "Linking $@"
-    $(LNK) $(OBJECTS_DEBUG) $(LFLAGS) -o $@
-
-$(RELEASE_DIR)/$(NAME).elf: $(OBJECTS_RELEASE)
-    @mkdir -p $(RELEASE_DIR)
-    @echo "Linking $@"
-    $(LNK) $(OBJECTS_RELEASE) $(LFLAGS) -o $@
-</code></pre>
-<ul>
-<li><strong>$(DEBUG_DIR)/$(NAME).elf</strong>: Links all debug build object files into an ELF file.
-<ul>
-<li>The <code>@mkdir -p $(DEBUG_DIR)</code> command ensures the debug build directory exists.</li>
-<li><code>$(LNK) $(OBJECTS_DEBUG) $(LFLAGS) -o $@</code> invokes the linker with the debug object files and linker flags to produce the ELF file.</li>
-</ul>
-</li>
-<li><strong>$(RELEASE_DIR)/$(NAME).elf</strong>: Links all release build object files into an ELF file.
-<ul>
-<li>The <code>@mkdir -p $(RELEASE_DIR)</code> command ensures the release build directory exists.</li>
-<li><code>$(LNK) $(OBJECTS_RELEASE) $(LFLAGS) -o $@</code> invokes the linker with the release object files and linker flags to produce the ELF file.</li>
-</ul>
-</li>
-</ul>
-<h3 id="compiling-and-assembling"><a class="header" href="#compiling-and-assembling">Compiling and Assembling</a></h3>
-<pre><code class="language-makefile">$(DEBUG_DIR)/%.o: $(SRC_DIR)/%.c
-    @mkdir -p $(DEBUG_DIR)
-    @echo "Compiling $&lt;"
-    $(CC) $(CFLAGS_COMMON) -c $&lt; -o $@
-
-$(DEBUG_DIR)/%.o: $(SRC_DIR)/%.s
-    @mkdir -p $(DEBUG_DIR)
-    @echo "Assembling $&lt;"
-    $(AS) $(ASFLAGS_DEBUG) -c $&lt; -o $@
-
-$(DEBUG_DIR)/%.o: $(LIB_DIR)/%.c
-    @mkdir -p $(DEBUG_DIR)
-    @echo "Compiling $&lt;"
-    $(CC) $(CFLAGS_COMMON) -c $&lt; -o $@
-
-$(RELEASE_DIR)/%.o: $(SRC_DIR)/%.c
-    @mkdir -p $(RELEASE_DIR)
-    @echo "Compiling $&lt;"
-    $(CC) $(CFLAGS_COMMON) -c $&lt; -o $@
-
-$(RELEASE_DIR)/%.o: $(SRC_DIR)/%.s
-    @mkdir -p $(RELEASE_DIR)
-    @echo "Assembling $&lt;"
-    $(AS) $(ASFLAGS_RELEASE) -c $&lt; -o $@
-
-$(RELEASE_DIR)/%.o: $(LIB_DIR)/%.c
-    @mkdir -p $(RELEASE_DIR)
-    @echo "Compiling $&lt;"
-    $(CC) $(CFLAGS_COMMON) -c $&lt; -o $@
-</code></pre>
-<ul>
-<li><strong>$(DEBUG_DIR)/%.o: $(SRC_DIR)/%.c</strong>: Compiles C source files in the <code>src</code> directory for the debug build.
-<ul>
-<li><code>@mkdir -p $(DEBUG_DIR)</code> ensures the debug build directory exists.</li>
-<li><code>@echo "Compiling $&lt;"</code> prints a message indicating the file being compiled.</li>
-<li><code>$(CC) $(CFLAGS_COMMON) -c $&lt; -o $@</code> compiles the C source file with common compiler flags.</li>
-</ul>
-</li>
-<li><strong>$(DEBUG_DIR)/%.o: $(SRC_DIR)/%.s</strong>: Assembles assembly source files in the <code>src</code> directory for the debug build.
-<ul>
-<li><code>@mkdir -p $(DEBUG_DIR)</code> ensures the debug build directory exists.</li>
-<li><code>@echo "Assembling $&lt;"</code> prints a message indicating the file being assembled.</li>
-<li><code>$(AS) $(ASFLAGS_DEBUG) -c $&lt; -o $@</code> assembles the assembly source file with debug assembler flags.</li>
-</ul>
-</li>
-<li><strong>$(DEBUG_DIR)/%.o: $(LIB_DIR)/%.c</strong>: Compiles C source files in the <code>lib</code> directory for the debug build.
-<ul>
-<li><code>@mkdir -p $(DEBUG_DIR)</code> ensures the debug build directory exists.</li>
-<li><code>@echo "Compiling $&lt;"</code> prints a message indicating the file being compiled.</li>
-<li><code>$(CC) $(CFLAGS_COMMON) -c $&lt; -o $@</code> compiles the C source file with common compiler flags.</li>
-</ul>
-</li>
-<li><strong>$(RELEASE_DIR)/%.o: $(SRC_DIR)/%.c</strong>: Compiles C source files in the <code>src</code> directory for the release build.
-<ul>
-<li><code>@mkdir -p $(RELEASE_DIR)</code> ensures the release build directory exists.</li>
-<li><code>@echo "Compiling $&lt;"</code> prints a message indicating the file being compiled.</li>
-<li><code>$(CC) $(CFLAGS_COMMON) -c $&lt; -o $@</code> compiles the C source file with common compiler flags.</li>
-</ul>
-</li>
-<li><strong>$(RELEASE_DIR)/%.o: $(SRC_DIR)/%.s</strong>: Assembles assembly source files in the <code>src</code> directory for the release build.
-<ul>
-<li><code>@mkdir -p $(RELEASE_DIR)</code> ensures the release build directory exists.</li>
-<li><code>@echo "Assembling $&lt;"</code> prints a message indicating the file being assembled.</li>
-<li><code>$(AS) $(ASFLAGS_RELEASE) -c $&lt; -o $@</code> assembles the assembly source file with release assembler flags.</li>
-</ul>
-</li>
-<li><strong>$(RELEASE_DIR)/%.o: $(LIB_DIR)/%.c</strong>: Compiles C source files in the <code>lib</code> directory for the release build.
-<ul>
-<li><code>@mkdir -p $(RELEASE_DIR)</code> ensures the release build directory exists.</li>
-<li><code>@echo "Compiling $&lt;"</code> prints a message indicating the file being compiled.</li>
-<li><code>$(CC) $(CFLAGS_COMMON) -c $&lt; -o $@</code> compiles the C source file with common compiler flags.</li>
-</ul>
-</li>
-</ul>
-<h3 id="clean"><a class="header" href="#clean">Clean</a></h3>
-<pre><code class="language-makefile">clean:
-    @echo "Cleaning..."
-    rm -rf $(BUILD_DIR)
-</code></pre>
-<ul>
-<li><strong>clean</strong>: Removes the build directory and its contents.
-<ul>
-<li><code>@echo "Cleaning..."</code> prints a message indicating the cleaning process.</li>
-<li><code>rm -rf $(BUILD_DIR)</code> recursively deletes the build directory, removing all build artifacts to ensure a clean slate for the next build.</li>
-</ul>
-</li>
-</ul>
-<h3 id="upload"><a class="header" href="#upload">Upload</a></h3>
-<pre><code class="language-makefile">upload: release
-    @echo "Uploading..."
-    $(OPENOCD) -f $(OPENOCD_CFG) -c "program $(RELEASE_DIR)/$(NAME).elf verify reset; shutdown"
-</code></pre>
-<ul>
-<li><strong>upload</strong>: Builds the release version and uploads the firmware to the target device using OpenOCD.
-<ul>
-<li><code>@echo "Uploading..."</code> prints a message indicating the upload process.</li>
-<li>`$(OPENOCD) -f $(OPENOCD_CFG) -c</li>
-</ul>
-</li>
-</ul>
-<p>“program $(RELEASE_DIR)/$(NAME).elf verify reset; shutdown”` uses OpenOCD to program the ELF file to the microcontroller, verify the programming, reset the microcontroller, and shut down OpenOCD. This ensures that the firmware is correctly uploaded and the microcontroller is ready to run the new firmware.</p>
-<h3 id="debug-run"><a class="header" href="#debug-run">Debug Run</a></h3>
-<pre><code class="language-makefile">debug-run: debug
-    @echo "Starting debugger..."
-    @$(OPENOCD) -f $(OPENOCD_CFG) &amp; \
-    $(GDB) $(DEBUG_DIR)/$(NAME).elf \
-    -ex "target remote localhost:3333" \
-    -ex "monitor reset halt"
-</code></pre>
-<ul>
-<li><strong>debug-run</strong>: Builds the debug version and starts the debugger using OpenOCD and GDB.
-<ul>
-<li><code>@echo "Starting debugger..."</code> prints a message indicating the start of the debugger.</li>
-<li><code>@$(OPENOCD) -f $(OPENOCD_CFG) &amp;</code> starts OpenOCD in the background to connect to the microcontroller.</li>
-<li><code>$(GDB) $(DEBUG_DIR)/$(NAME).elf -ex "target remote localhost:3333" -ex "monitor reset halt"</code> starts GDB, connects to the OpenOCD server, and resets and halts the microcontroller. This setup allows interactive debugging of the firmware.</li>
-</ul>
-</li>
-</ul>
-<h3 id="simulate"><a class="header" href="#simulate">Simulate</a></h3>
-<pre><code class="language-makefile">simulate: debug
-    @echo "Simulating..."
-    pkill qemu-system-arm || true
-    @$(QEMU) -machine mps2-an385 -cpu cortex-m3 -kernel $(DEBUG_DIR)/$(NAME).elf -nographic -s -S &amp;
-    @$(GDB) $(DEBUG_DIR)/$(NAME).elf -ex "target remote localhost:1234"
-    @pkill qemu-system-arm || true
-</code></pre>
-<ul>
-<li><strong>simulate</strong>: Builds the debug version and starts the QEMU emulator for simulation.
-<ul>
-<li><code>@echo "Simulating..."</code> prints a message indicating the start of the simulation.</li>
-<li><code>pkill qemu-system-arm || true</code> kills any running QEMU instances to avoid conflicts.</li>
-<li><code>@$(QEMU) -machine mps2-an385 -cpu cortex-m3 -kernel $(DEBUG_DIR)/$(NAME).elf -nographic -s -S &amp;</code> starts QEMU in the background, simulating the ARM Cortex-M3 environment with the debug ELF file.</li>
-<li><code>@$(GDB) $(DEBUG_DIR)/$(NAME).elf -ex "target remote localhost:1234"</code> starts GDB and connects to the QEMU server for debugging.</li>
-<li><code>@pkill qemu-system-arm || true</code> stops the QEMU simulation after debugging.</li>
-</ul>
-</li>
-</ul>
-<h3 id="phony-targets"><a class="header" href="#phony-targets">Phony Targets</a></h3>
-<pre><code class="language-makefile">.PHONY: all debug release clean upload debug-run simulate
-</code></pre>
-<ul>
-<li><strong>.PHONY</strong>: Declares phony targets that do not represent actual files, ensuring make will always execute the commands associated with these targets. This is useful to avoid conflicts with files that might have the same name as the targets.</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="compiling-linking-flashing-"><a class="header" href="#compiling-linking-flashing-">Compiling, Linking, Flashing, …</a></h1>
-<p>With the many different ways to compile, link, flash, debug, and more. There are also lots of things to know about each step.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="understanding-and-modifying-the-msp432p401r-linker-script"><a class="header" href="#understanding-and-modifying-the-msp432p401r-linker-script">Understanding and Modifying the MSP432P401R Linker Script</a></h1>
-<h2 id="introduction-2"><a class="header" href="#introduction-2">Introduction</a></h2>
-<p>This document explains the linker script for the Texas Instruments MSP432P401R microcontroller. Linker scripts are used by the linker to control the layout of the generated executable, which is essential for embedded systems development. The script defines how various sections of code and data are placed in memory, ensuring the correct operation of the system.</p>
-<h2 id="linker-script-overview"><a class="header" href="#linker-script-overview">Linker Script Overview</a></h2>
-<p>The provided linker script includes the following key sections:</p>
+<li>Install esp-idf
 <ol>
-<li><strong>Memory Definition</strong></li>
-<li><strong>Region Aliases</strong></li>
-<li><strong>Sections</strong></li>
+<li>Follow and run: <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html">esp-idf Windows setup</a></li>
 </ol>
-<h3 id="1-memory-definition"><a class="header" href="#1-memory-definition">1. Memory Definition</a></h3>
-<p>The <code>MEMORY</code> command defines the memory regions available in the target hardware, such as Flash and RAM. Each memory region specifies the starting address and size.</p>
-<pre><code class="language-plaintext">MEMORY
-{
-    MAIN_FLASH (RX) : ORIGIN = 0x00000000, LENGTH = 0x00040000
-    INFO_FLASH (RX) : ORIGIN = 0x00200000, LENGTH = 0x00004000
-    SRAM_CODE  (RWX): ORIGIN = 0x01000000, LENGTH = 0x00010000
-    SRAM_DATA  (RW) : ORIGIN = 0x20000000, LENGTH = 0x00010000
-}
-</code></pre>
-<ul>
-<li><code>MAIN_FLASH</code>: Main flash memory region, read and execute permissions.</li>
-<li><code>INFO_FLASH</code>: Information flash memory region, read and execute permissions.</li>
-<li><code>SRAM_CODE</code>: SRAM region for code, read, write, and execute permissions.</li>
-<li><code>SRAM_DATA</code>: SRAM region for data, read and write permissions.</li>
-</ul>
-<h3 id="2-region-aliases"><a class="header" href="#2-region-aliases">2. Region Aliases</a></h3>
-<p>Region aliases provide convenient names for memory regions used in the <code>SECTIONS</code> command.</p>
-<pre><code class="language-plaintext">REGION_ALIAS("REGION_TEXT", MAIN_FLASH);
-REGION_ALIAS("REGION_INFO", INFO_FLASH);
-REGION_ALIAS("REGION_BSS", SRAM_DATA);
-REGION_ALIAS("REGION_DATA", SRAM_DATA);
-REGION_ALIAS("REGION_STACK", SRAM_DATA);
-REGION_ALIAS("REGION_HEAP", SRAM_DATA);
-REGION_ALIAS("REGION_ARM_EXIDX", MAIN_FLASH);
-REGION_ALIAS("REGION_ARM_EXTAB", MAIN_FLASH);
-</code></pre>
-<h3 id="3-sections"><a class="header" href="#3-sections">3. Sections</a></h3>
-<p>The <code>SECTIONS</code> command specifies how different sections of the program (like <code>.text</code>, <code>.data</code>, <code>.bss</code>, etc.) should be placed in the defined memory regions.</p>
-<pre><code class="language-plaintext">SECTIONS {
-
-    /* section for the interrupt vector area                                 */
-    PROVIDE (_intvecs_base_address =
-        DEFINED(_intvecs_base_address) ? _intvecs_base_address : 0x0);
-
-    .intvecs (_intvecs_base_address) : AT (_intvecs_base_address) {
-        KEEP (*(.intvecs))
-    } &gt; REGION_TEXT
-
-    /* The following three sections show the usage of the INFO flash memory  */
-    /* INFO flash memory is intended to be used for the following            */
-    /* device specific purposes:                                             */
-    /* Flash mailbox for device security operations                          */
-    PROVIDE (_mailbox_base_address = 0x200000);
-
-    .flashMailbox (_mailbox_base_address) : AT (_mailbox_base_address) {
-        KEEP (*(.flashMailbox))
-    } &gt; REGION_INFO
-
-    /* TLV table for device identification and characterization              */
-    PROVIDE (_tlv_base_address = 0x00201000);
-
-    .tlvTable (_tlv_base_address) (NOLOAD) : AT (_tlv_base_address) {
-        KEEP (*(.tlvTable))
-    } &gt; REGION_INFO
-
-    /* BSL area for device bootstrap loader                                  */
-    PROVIDE (_bsl_base_address = 0x00202000);
-
-    .bslArea (_bsl_base_address) : AT (_bsl_base_address) {
-        KEEP (*(.bslArea))
-    } &gt; REGION_INFO
-
-    PROVIDE (_vtable_base_address =
-        DEFINED(_vtable_base_address) ? _vtable_base_address : 0x20000000);
-
-    .vtable (_vtable_base_address) : AT (_vtable_base_address) {
-        KEEP (*(.vtable))
-    } &gt; REGION_DATA
-
-    .text : {
-        CREATE_OBJECT_SYMBOLS
-        KEEP (*(.text))
-        *(.text.*)
-        . = ALIGN(0x4);
-        KEEP (*(.ctors))
-        . = ALIGN(0x4);
-        KEEP (*(.dtors))
-        . = ALIGN(0x4);
-        __init_array_start = .;
-        KEEP (*(.init_array*))
-        __init_array_end = .;
-        KEEP (*(.init))
-        KEEP (*(.fini*))
-    } &gt; REGION_TEXT AT&gt; REGION_TEXT
-
-    .rodata : {
-        *(.rodata)
-        *(.rodata.*)
-    } &gt; REGION_TEXT AT&gt; REGION_TEXT
-
-    .ARM.exidx : {
-        __exidx_start = .;
-        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-        __exidx_end = .;
-    } &gt; REGION_ARM_EXIDX AT&gt; REGION_ARM_EXIDX
-
-    .ARM.extab : {
-        KEEP (*(.ARM.extab* .gnu.linkonce.armextab.*))
-    } &gt; REGION_ARM_EXTAB AT&gt; REGION_ARM_EXTAB
-
-    __etext = .;
-
-    .data : {
-        __data_load__ = LOADADDR (.data);
-        __data_start__ = .;
-        KEEP (*(.data))
-        KEEP (*(.data*))
-        . = ALIGN (4);
-        __data_end__ = .;
-    } &gt; REGION_DATA AT&gt; REGION_TEXT
-
-    .bss : {
-        __bss_start__ = .;
-        *(.shbss)
-        KEEP (*(.bss))
-        *(.bss.*)
-        *(COMMON)
-        . = ALIGN (4);
-        __bss_end__ = .;
-    } &gt; REGION_BSS AT&gt; REGION_BSS
-
-    .heap : {
-        __heap_start__ = .;
-        end = __heap_start__;
-        _end = end;
-        __end = end;
-        KEEP (*(.heap))
-        __heap_end__ = .;
-        __HeapLimit = __heap_end__;
-    } &gt; REGION_HEAP AT&gt; REGION_HEAP
-
-    .stack (NOLOAD) : ALIGN(0x8) {
-        _stack = .;
-        KEEP(*(.stack))
-    } &gt; REGION_STACK AT&gt; REGION_STACK
-
-    __StackTop = ORIGIN(REGION_STACK) + LENGTH(REGION_STACK);
-    PROVIDE(__stack = __StackTop);
-}
-</code></pre>
-<ul>
-<li><strong>.intvecs</strong>: Interrupt vectors, placed at the beginning of the main flash memory.</li>
-<li><strong>.flashMailbox, .tlvTable, .bslArea</strong>: Sections placed in the info flash memory for device-specific purposes.</li>
-<li><strong>.vtable</strong>: Vector table, placed in the SRAM data region.</li>
-<li><strong>.text</strong>: Code and read-only data.</li>
-<li><strong>.rodata</strong>: Read-only data.</li>
-<li><strong>.ARM.exidx, .ARM.extab</strong>: Exception handling sections for ARM architecture.</li>
-<li><strong>.data</strong>: Initialized data, loaded into SRAM.</li>
-<li><strong>.bss</strong>: Uninitialized data, zeroed at runtime in SRAM.</li>
-<li><strong>.heap</strong>: Heap section for dynamic memory allocation.</li>
-<li><strong>.stack</strong>: Stack section for function call management.</li>
-</ul>
-<h2 id="modifying-the-linker-script"><a class="header" href="#modifying-the-linker-script">Modifying the Linker Script</a></h2>
-<p>To modify the linker script for your specific needs, you can adjust the memory regions or the section placement. Here are a few common modifications:</p>
+</li>
+<li>(Optional) Install VS Code Plugin
 <ol>
-<li><strong>Changing Memory Region Sizes</strong>: If your hardware has different memory sizes, update the <code>LENGTH</code> fields in the <code>MEMORY</code> command.</li>
-<li><strong>Adding New Sections</strong>: To add a new section, define it in the <code>SECTIONS</code> command and specify its memory region.</li>
-<li><strong>Adjusting Section Placement</strong>: Modify the memory region assigned to a section by changing the <code>&gt;</code> operator in the <code>SECTIONS</code> command.</li>
+<li><a href="https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md">VS Code Plugin</a></li>
 </ol>
-<h3 id="example-adding-a-new-section"><a class="header" href="#example-adding-a-new-section">Example: Adding a New Section</a></h3>
-<p>To add a <code>.custom</code> section in the SRAM code region:</p>
-<pre><code class="language-plaintext">.custom : {
-    *(.custom)
-} &gt; SRAM_CODE
+</li>
+<li>Install clang-format
+<ol>
+<li>Download, Run, and Install <a href="https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/LLVM-18.1.8-win64.exe">LLVM</a></li>
+<li>Verify download worked</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-sh">clang-format --version
+
+clang-format version 18.1.8
 </code></pre>
-<h2 id="future-considerations"><a class="header" href="#future-considerations">Future Considerations</a></h2>
-<ul>
-<li><strong>Compatibility</strong>: Ensure the linker script remains compatible with the toolchain and hardware specifications.</li>
-<li><strong>Optimization</strong>: Fine-tune the section placement for performance optimization.</li>
-<li><strong>Security</strong>: Consider memory protection techniques to enhance security.</li>
-</ul>
-<h2 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h2>
-<p>Understanding and modifying the linker script is crucial for embedded systems development. This document provides a comprehensive guide to the MSP432P401R linker script, helping you tailor it to your project’s needs.</p>
-<p>For more detailed information, refer to the official documentation from Texas Instruments and the GNU Linker Manual.</p>
+<ol start="4">
+<li>Install asmfmt
+<ol>
+<li>Install golang
+<ol>
+<li>Download, Run, and Install <a href="https://go.dev/dl/go1.22.5.windows-amd64.msi">GO</a></li>
+</ol>
+</li>
+<li><code>go install github.com/klauspost/asmfmt/cmd/asmfmt@latest</code></li>
+</ol>
+</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 <ul>
 <li><a href="https://github.com/bsikar">Brighton Sikarskie</a></li>

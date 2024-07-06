@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="hardware_design/msp432_vs_esp32.html"><strong aria-hidden="true">3.1.</strong> Why the MSP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="installation/index.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/environment_setup.html"><strong aria-hidden="true">5.1.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><a href="basics/index.html"><strong aria-hidden="true">6.</strong> Basic Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="basics/movement/makefile.html"><strong aria-hidden="true">6.1.</strong> Movement Makefile</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Movement Program</div></li></ol></li><li class="chapter-item expanded "><a href="compiling_linking_flashing_more/index.html"><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Compiling</div></li><li class="chapter-item expanded "><a href="compiling_linking_flashing_more/linking_script.html"><strong aria-hidden="true">7.2.</strong> Linking</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.3.</strong> Flashing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.4.</strong> Debugging</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Project Overview</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Hardware Design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="hardware_design/msp432_vs_esp32.html"><strong aria-hidden="true">3.1.</strong> Why the ESP32</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Software Design</div></li><li class="chapter-item expanded "><a href="installation/index.html"><strong aria-hidden="true">5.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/environment_setup.html"><strong aria-hidden="true">5.1.</strong> Environment Setup</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Basic Examples</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Compiling, Linking, Flashing, ...</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Testing and Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Future Work and Improvements</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -181,9 +181,8 @@
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p>We’re building a robot that can travel across all sorts of terrain, from smooth plains to hilly landscapes, while creating detailed 3D maps of the area.
 Our robot isn’t just about mapping the ground—it’s also equipped to measure temperature, humidity, and air quality, giving a full picture of the environment.</p>
-<p>At the heart of our robot is the MSP432 microcontroller, which handles all the data processing and control tasks.
-We’re using SG90 servo motors to ensure our robot can move smoothly and adapt to different terrains.
-With the help of a dual-band WiFi module from Texas Instruments, our robot can communicate its findings in real-time.</p>
+<p>At the heart of our robot is the ESP32 microcontroller, which handles all the data processing and control tasks.
+We’re using MG946R servo motors to ensure our robot can move smoothly and adapt to different terrains.</p>
 <p>This project is all about combining cool tech and practical applications.
 By the end, we aim to have a robot that’s not only a great mapper but also a valuable tool for anyone interested in environmental monitoring.</p>
 <h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
@@ -193,13 +192,13 @@ By the end, we aim to have a robot that’s not only a great mapper but also a v
 <h2 id="contributing"><a class="header" href="#contributing">Contributing</a></h2>
 <p>Anything inside of the Topographic-Robot is free and open source.
 You can find the source code in various repos on the <a href="https://github.com/orgs/Topographic-Robot/repositories">organization</a>.
-Any issue or feature request can be posted on the GitHub issue tracker for their coresponding repository. Internally Jira
+Any issue or feature request can be posted on the GitHub issue tracker for their corresponding repository. Internally Jira
 is used to manage features, issues, sprints, the backlog and many other things. This means not everything on Jira will be
 attached to GitHub. However, all of the code documentation, and the progression of development will be shown.</p>
 <h2 id="license"><a class="header" href="#license">License</a></h2>
 <p>Everything within the organization is released under the <a href="https://github.com/Topographic-Robot/Documentation/blob/main/LICENSE">MIT License</a>.
-If there is a repository that includes a different license such as a library thats not internaly made by us then that license takes precedence.
-If there is ever a repository that is made by us and doesn’t explicitly include a licenese then know it is still released under the MIT License.</p>
+If there is a repository that includes a different license such as a library thats not internally made by us then that license takes precedence.
+If there is ever a repository that is made by us and doesn’t explicitly include a license then know it is still released under the MIT License.</p>
 
                     </main>
 
