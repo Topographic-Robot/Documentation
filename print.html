@@ -204,7 +204,7 @@ If there is ever a repository that is made by us and doesn’t explicitly includ
 <h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
 <p>When designing a robot for topographical mapping, selecting the appropriate microcontroller is crucial. This document outlines the decision-making process for choosing between the MSP432 and the ESP32, detailing the benefits and drawbacks of each, and explaining the final choice to use the ESP32.</p>
 <h2 id="considered-microcontrollers"><a class="header" href="#considered-microcontrollers">Considered Microcontrollers</a></h2>
-<h3 id="esp32"><a class="header" href="#esp32">ESP32</a></h3>
+<h3 id="esp32-esp-wroom-32-dev-kit-v1"><a class="header" href="#esp32-esp-wroom-32-dev-kit-v1">ESP32 (esp-wroom-32 dev-kit-v1)</a></h3>
 <p>The ESP32 is a powerful and versatile microcontroller known for its integrated Wi-Fi and Bluetooth capabilities. It features a dual-core processor, ample GPIO pins, and extensive support for various networking protocols.</p>
 <h4 id="advantages"><a class="header" href="#advantages">Advantages</a></h4>
 <ul>
@@ -248,34 +248,44 @@ If there is ever a repository that is made by us and doesn’t explicitly includ
 <p>There are many things that need to be installed in order to start developing.
 There might be a release on GitHub, but likely not.
 To run this yourself you must go through the install process.</p>
-<p>The section below can most likely be skipped unless you plan on making changes to the documentation.</p>
+<p>If you are going to do development for the documentation of this project, this is for you. Otherwise, continue to the next pages.</p>
 <h2 id="mdbook-setup"><a class="header" href="#mdbook-setup">mdBook setup</a></h2>
 <h3 id="linux"><a class="header" href="#linux">Linux</a></h3>
-<p>If you are going to do development for the documentation of this project, this is for you. Otherwise, continue to the next pages.</p>
-<h4 id="installation-of-rust"><a class="header" href="#installation-of-rust">Installation of Rust</a></h4>
-<p>First Rust needs to be installed on your system:</p>
-<pre><code class="language-sh">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-</code></pre>
-<h4 id="installation-of-gcc"><a class="header" href="#installation-of-gcc">Installation of gcc</a></h4>
-<p>You will need to install gcc for mdBook. The provided command below is for apt systems and will need to be ran with sudo.</p>
-<pre><code class="language-sh">apt-get update
-apt-get install gcc
-</code></pre>
-<h4 id="installation-of-mdbook"><a class="header" href="#installation-of-mdbook">Installation of mdBook</a></h4>
-<p>Once you have installed Rust, the following command can be used to build and install mdBook, this does not need to be ran as root.</p>
-<pre><code class="language-sh">cargo install mdbook
-</code></pre>
-<h4 id="mdbook-documentation"><a class="header" href="#mdbook-documentation">mdBook documentation</a></h4>
-<p>All of the official documentation for mdBook can be found on the <a href="https://rust-lang.github.io/mdBook/">official mdBook docs</a>.
-However some good commands are:</p>
-<ul>
-<li><code>mdbook build</code> — Renders the book.</li>
-<li><code>mdbook watch</code> — Rebuilds the book any time a source file changes.</li>
-<li><code>mdbook serve</code> — Runs a web server to view the book, and rebuilds on changes.</li>
-<li><code>mdbook test</code> — Tests Rust code samples.</li>
-<li><code>mdbook clean</code> — Deletes the rendered output.</li>
-<li><code>mdbook completions</code> — Support for shell auto-completion.</li>
-</ul>
+<ol>
+<li>Install Rust
+<ol>
+<li><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+</ol>
+</li>
+<li>Install gcc
+<ol>
+<li><code>apt-get install gcc</code></li>
+</ol>
+</li>
+<li>Install mdBook
+<ol>
+<li><code>cargo install mdbook</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="macos"><a class="header" href="#macos">MacOS</a></h3>
+<ol>
+<li>Install Rust
+<ol>
+<li><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+</ol>
+</li>
+<li>Install gcc
+<ol>
+<li><code>brew install gcc</code></li>
+</ol>
+</li>
+<li>Install mdBook
+<ol>
+<li><code>cargo install mdbook</code></li>
+</ol>
+</li>
+</ol>
 <h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
 <p>To install Rust for windows follow the following link provided
 <a href="https://www.rust-lang.org/tools/install">https://www.rust-lang.org/tools/install</a>
@@ -283,7 +293,7 @@ Download the 64 bit .exe and run the file.
 Your command prompt should open once the file is ran.</p>
 <ol>
 <li>
-<p>“Rust requires a linker and Windows API libraries but they don’t seem to be available.”  The following prompt should appear; select the 1st option by typing the number 1. This should be the free version. Selecting this will prompt Windows to install Visual Studio.</p>
+<p>“Rust requires a linker and Windows API libraries but they don’t seem to be available.” The following prompt should appear; select the 1st option by typing the number 1. This should be the free version. Selecting this will prompt Windows to install Visual Studio.</p>
 </li>
 <li>
 <p>When prompted, click continue and install both packages displayed.</p>
@@ -309,7 +319,24 @@ Your command prompt should open once the file is ran.</p>
 <li>
 <p>Next reopen the command prompt and rust should be properly installed.</p>
 </li>
+<li>
+<p>Install mdBook</p>
+<ol>
+<li><code>cargo install mdbook</code></li>
 </ol>
+</li>
+</ol>
+<h3 id="mdbook-documentation"><a class="header" href="#mdbook-documentation">mdBook documentation</a></h3>
+<p>All of the official documentation for mdBook can be found on the <a href="https://rust-lang.github.io/mdBook/">official mdBook docs</a>.
+However some good commands are:</p>
+<ul>
+<li><code>mdbook build</code> — Renders the book.</li>
+<li><code>mdbook watch</code> — Rebuilds the book any time a source file changes.</li>
+<li><code>mdbook serve</code> — Runs a web server to view the book, and rebuilds on changes.</li>
+<li><code>mdbook test</code> — Tests Rust code samples.</li>
+<li><code>mdbook clean</code> — Deletes the rendered output.</li>
+<li><code>mdbook completions</code> — Support for shell auto-completion.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="environment-setup"><a class="header" href="#environment-setup">Environment Setup</a></h1>
 <h2 id="linux-environment-tested-on-debian-1260"><a class="header" href="#linux-environment-tested-on-debian-1260">Linux Environment (tested on debian-12.6.0)</a></h2>
 <h2 id="macos-environment-tested-on-macbook-air-m1-2020-with-sonoma-v145"><a class="header" href="#macos-environment-tested-on-macbook-air-m1-2020-with-sonoma-v145">MacOS Environment (tested on MacBook Air M1 2020 with Sonoma v14.5)</a></h2>
@@ -376,13 +403,11 @@ Homebrew clang-format version 18.1.8
 </ol>
 </li>
 <li>
-<p>(Optional) Install VS Code Plugin</p>
-<ol>
-<li><a href="https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md">VS Code Plugin</a></li>
-<li><img src="installation/vscode-esp-idf-extension-macos.png" alt="vscode-esp-idf-extension" /></li>
-</ol>
+<p>(Optional) Install <a href="https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md">VS Code Plugin</a></p>
 </li>
 </ol>
+<p>You will need to configure this in VS Code, put the install paths correctly
+<img src="installation/vscode-esp-idf-extension-macos.png" alt="vscode-esp-idf-extension" /></p>
 <h2 id="windows-environment-tested-on-windows-11-23h2"><a class="header" href="#windows-environment-tested-on-windows-11-23h2">Windows Environment (tested on Windows 11 23H2)</a></h2>
 <p>The first thing we need to do is setup your environment.</p>
 <ol>
@@ -391,11 +416,7 @@ Homebrew clang-format version 18.1.8
 <li>Follow and run: <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html">esp-idf Windows setup</a></li>
 </ol>
 </li>
-<li>(Optional) Install VS Code Plugin
-<ol>
-<li><a href="https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md">VS Code Plugin</a></li>
-</ol>
-</li>
+<li>(Optional) Install <a href="https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md">VS Code Plugin</a></li>
 <li>Install clang-format
 <ol>
 <li>Download, Run, and Install <a href="https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/LLVM-18.1.8-win64.exe">LLVM</a></li>
